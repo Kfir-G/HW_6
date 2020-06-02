@@ -4,12 +4,12 @@ using System.Text;
 
 namespace HW_6
 {
-    class Book
+    abstract class Book
     {
         //-----data fields-----
         private string name;
         private int pages;      // if its negative->100
-        private string author;
+        private string author;  
 
         //-----properties----
         public string Name { get => name; set => name = value; }
@@ -17,5 +17,10 @@ namespace HW_6
         public string Author { get => author; set => author = value; }
 
         //-----methods----
+        public abstract string Summarize();
+        public override string ToString()
+        {
+            return "The name of the book:" + name + "\t" + "number of pages:" + pages + "\t" + "the name of the author" + author;
+        }
     }
 }
