@@ -4,8 +4,9 @@ using System.Text;
 
 namespace HW_6
 {
-    class ActionComicBook:ComicBook
+    class ActionComicBook:ComicBook, IBorrowable
     {
+        //-----data fields----
         //protected string name
         //protected int pages      * if its negative->100
         //protected string author
@@ -46,7 +47,15 @@ namespace HW_6
         {
             return base.ToString() + "\tthe minimal age is:" + minAge;
         }
-        //Borrow
-        //Return
+
+        //------interface------
+        public new int Return()
+        {
+            return base.Return();
+        }
+        public new bool Borrow(int days)
+        {
+            return base.Borrow(days);
+        }
     }
 }

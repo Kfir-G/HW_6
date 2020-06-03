@@ -4,8 +4,9 @@ using System.Text;
 
 namespace HW_6
 {
-    class ComicBook:Book
+    class ComicBook:Book, IBorrowable
     {
+        //-----data fields----
         //protected string name
         //protected int pages      * if its negative->100
         //protected string author
@@ -33,7 +34,23 @@ namespace HW_6
         {
             return base.ToString() + "\tdate:" + returnDate;
         }
-        //Borrow
-        //Return 
+        //-----interface----
+        public bool Borrow(int days) //for comic books ONLY!
+        {
+            if ( (int.Parse(returnDate.Day.ToString())) <= (int.Parse(returnDate.Day.ToString()) + days))
+            {
+                returnDate.AddDays(days);
+                return true;
+            }
+            else
+                return false;
+        }
+        public int Return()
+        {
+            DateTime dateTime = DateTime.Now;
+            return ( (returnDate.Subtract(dateTime)).Days );
+        }
+         
     }
+
 }

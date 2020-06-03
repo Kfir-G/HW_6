@@ -6,14 +6,15 @@ namespace HW_6
 {
     class LibraryBook : Book
     {
-        //protected string name;
-        //protected int pages;      * if its negative->100
-        //protected string author;
+        //-----data fields----
+        //protected string name
+        //protected int pages;     * if its negative->100
+        //protected string author
 
         //-----properties----
-        
+
         //-----methods-----
-            //constractors:
+        //constractors:
         public LibraryBook():base()
         {
 
