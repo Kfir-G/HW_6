@@ -51,20 +51,20 @@ namespace HW_6
         }
 
         //------interface------
-        public int Return()
-        {
-            DateTime dateTime = DateTime.Now;
-            return ((returnDate.Subtract(dateTime)).Days);
-        }
         public bool Borrow(int days) //for comic books ONLY!
         {
-            if (returnDate.Day < returnDate.Day + days)
+            if ( returnDate.CompareTo(returnDate.Day + days) <= 0)
             {
                 returnDate.AddDays(days);
                 return true;
             }
             else
                 return false;
+        }
+        public int Return()
+        {
+            DateTime dateTime = DateTime.Now;
+            return ((returnDate.Subtract(dateTime)).Days);
         }
     }
 }

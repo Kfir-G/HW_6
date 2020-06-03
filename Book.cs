@@ -4,6 +4,11 @@ using System.Text;
 
 namespace HW_6
 {
+    public interface IBorrowable
+    {
+        bool Borrow(int days);
+        int Return();
+    }
     abstract class Book
     {
         //-----data fields-----
@@ -30,6 +35,7 @@ namespace HW_6
             Pages = pages;
             Author = author;
         }
+            //
         public abstract string Summarize();
         public override string ToString()
         {

@@ -38,11 +38,12 @@ namespace HW_6
         }
         public new int Fine()
         {
+            DateTime currentTime = DateTime.Now;
             int bill = 0;
             if (isDamaged)
                 bill += 200;
-            // if איחור
-            // 12שח+ על כל יום איחור
+            if (currentTime.Day > returnDate.Day)
+                bill += 12 * (currentTime.Day - returnDate.Day);
             return bill;
         }
 

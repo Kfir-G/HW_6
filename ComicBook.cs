@@ -37,7 +37,7 @@ namespace HW_6
         //-----interface----
         public bool Borrow(int days) //for comic books ONLY!
         {
-            if ( (int.Parse(returnDate.Day.ToString())) <= (int.Parse(returnDate.Day.ToString()) + days))
+            if (returnDate.CompareTo(returnDate.Day+days) <= 0)
             {
                 returnDate.AddDays(days);
                 return true;
