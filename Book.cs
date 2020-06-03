@@ -7,9 +7,9 @@ namespace HW_6
     abstract class Book
     {
         //-----data fields-----
-        private string name;
-        private int pages;      // if its negative->100
-        private string author;  
+        protected string name;
+        protected int pages;      // if its negative->100
+        protected string author;  
 
         //-----properties----
         public string Name { get => name; set => name = value; }
@@ -17,6 +17,19 @@ namespace HW_6
         public string Author { get => author; set => author = value; }
 
         //-----methods----
+            //constructors:
+        public Book()
+        {
+            Name = "No name yet";               //default
+            Pages = -1;                         //default
+            Author = "No author's name yet";    //default
+        }
+        public Book(string name, int pages, string author)
+        {
+            Name = name;
+            Pages = pages;
+            Author = author;
+        }
         public abstract string Summarize();
         public override string ToString()
         {
