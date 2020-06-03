@@ -13,7 +13,19 @@ namespace HW_6
         protected int minAge;       // if its negative ->16
 
         //-----properties-----
-        public int MinAge { get => minAge; set => minAge = value; }
+            //set:
+        public void SetMinAge(int minAge)
+        {
+            if (minAge < 0)
+                this.minAge = 16;   //default
+            else
+                this.minAge = minAge;
+        }
+            //get:
+        public int GetMinAge()
+        {
+            return minAge;
+        }
 
         //----methods---
             //constractors:
@@ -23,12 +35,12 @@ namespace HW_6
         }
         public ActionComicBook(string name, int pages, string author, DateTime retrunDate, int minAge):base(name,pages,author,retrunDate)
         {
-            MinAge = minAge;
+            SetMinAge(minAge);
         }
             //
         public override string Summarize()
         {
-            return base.Summarize() + "\tThis action comic book is for ages greater than " + MinAge + " years old";
+            return base.Summarize() + "\tThis action comic book is for ages greater than " + minAge + " years old";
         }
         public override string ToString()
         {
