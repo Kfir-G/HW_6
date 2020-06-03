@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HW_6
 {
-    class CosherCookBook:CookBook
+    class CosherCookBook:CookBook,IBorrowable
     {
         //-----data fields----
         //protected string name
@@ -45,7 +45,15 @@ namespace HW_6
             // 12שח+ על כל יום איחור
             return bill;
         }
-        //Borrow
-        //Return
+
+        //------interface------
+        public new int Return()
+        {
+            return base.Return();
+        }
+        public new bool Borrow(int days)
+        {
+            return base.Borrow(days);
+        }
     }
 }
