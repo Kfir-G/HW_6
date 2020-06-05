@@ -30,7 +30,7 @@ namespace HW_6
             ReturnDate = returnTime;
             IsDamaged = isDamaged;
         }
-        //
+            //
         public override string Summarize()
         {
             return "This cooking book might contain non - kosher ingredients";

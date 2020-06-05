@@ -47,6 +47,10 @@ namespace HW_6
         {
             return base.ToString() + "\tthe minimal age is:" + minAge;
         }
+        public new int Fine()
+        {
+            return base.Fine();
+        }
 
         //------interface------
         public new int Return()

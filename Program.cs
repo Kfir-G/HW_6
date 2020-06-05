@@ -4,40 +4,49 @@ namespace HW_6
 {
     class Program
     {
+        //-----Main----
         static void Main(string[] args)
         {
             Book[] books = new Book[10];
 
         }
-        public static int ReturnBook(Book book)
+
+        //------functions------
+        public static void ReturnBook(Book book)
         {
             if(book is ComicBook)
             {
                 ComicBook comicBook = book as ComicBook;
                 if (comicBook.ReturnDate.CompareTo(DateTime.Now) > 0)//later 
-                {
                     Console.WriteLine("The fine is: {0}", comicBook.Fine());
-                    return -(comicBook.ReturnDate.Day);
-                }
-                else
-                {
-                    return (comicBook.ReturnDate.Day);
-                }
+                return; //Exit
             }
-            if(book is CookBook)
+            if (book is CookBook)
             {
                 CookBook cookBook = book as CookBook;
-                if(cookBook.ReturnDate.CompareTo(DateTime.Now) > 0)//later
-                {
+                if (cookBook.ReturnDate.CompareTo(DateTime.Now) > 0) //later
                     Console.WriteLine("The Fine is:{0}", cookBook.Fine());
-                    return -(cookBook.ReturnDate.Day);
-                }
-                else
-                {
-                    return (cookBook.ReturnDate.Day);
-                }
+                return; //Exit
             }
-            return 0;   //default
+        }
+        public static void BorrowBook(Book book, int daysBorrow)
+        {
+            if(book is ComicBook)
+            {
+                ComicBook comicBook = book as ComicBook;
+                if (comicBook.Borrow(daysBorrow))
+                    comicBook.ToString();
+                else
+                    Console.WriteLine("You can't Borrow the Book");
+            }
+            if( book is CookBook)
+            {
+                CookBook cookBook = book as CookBook;
+                if (cookBook.Borrow(daysBorrow))
+                    cookBook.ToString();
+                else
+                    Console.WriteLine("You can't Borrow the Book");
+            }
         }
     }
 }

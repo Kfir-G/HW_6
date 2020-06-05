@@ -36,10 +36,10 @@ namespace HW_6
         }
         public int Fine()
         {
-            DateTime currentTime = DateTime.Now;
+            int resultDays = DateTime.Compare(DateTime.Now, returnDate);
             int bill = 0;
-            if (currentTime.Day > returnDate.Day)
-                bill += 10 * (currentTime.Day - returnDate.Day);
+            if (resultDays > 0)
+                bill += 10 * resultDays;
             return bill;
         }
         //-----interface----

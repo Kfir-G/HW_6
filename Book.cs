@@ -26,13 +26,16 @@ namespace HW_6
         public Book()
         {
             Name = "No name yet";               //default
-            Pages = -1;                         //default
+            Pages = 100;                         //default
             Author = "No author's name yet";    //default
         }
         public Book(string name, int pages, string author)
         {
             Name = name;
-            Pages = pages;
+            if (pages < 0)
+                Pages = 100; //default
+            else
+                Pages = pages;
             Author = author;
         }
             //
