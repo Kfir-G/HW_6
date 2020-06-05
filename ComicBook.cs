@@ -21,7 +21,7 @@ namespace HW_6
         {
             ReturnDate = DateTime.Now; //default
         }
-        public ComicBook( string name, int pages, string author, DateTime retrunDate): base(name,pages,author)
+        public ComicBook(string name, int pages, string author, DateTime retrunDate): base(name,pages,author)
         {
             ReturnDate = returnDate;
         }
@@ -33,6 +33,14 @@ namespace HW_6
         public override string ToString()
         {
             return base.ToString() + "\tdate:" + returnDate;
+        }
+        public int Fine()
+        {
+            DateTime currentTime = DateTime.Now;
+            int bill = 0;
+            if (currentTime.Day > returnDate.Day)
+                bill += 10 * (currentTime.Day - returnDate.Day);
+            return bill;
         }
         //-----interface----
         public bool Borrow(int days) //for comic books ONLY!
@@ -49,8 +57,7 @@ namespace HW_6
         {
             DateTime dateTime = DateTime.Now;
             return ( (returnDate.Subtract(dateTime)).Days );
-        }
-         
+        } 
     }
 
 }
