@@ -41,12 +41,12 @@ namespace HW_6
         }
         public int Fine()
         {
-            DateTime currentTime = DateTime.Now;
-            int bill = 0;
-            if (isDamaged)
-                bill += 100;
-            if(currentTime.Day > returnDate.Day)
-                bill += 10 * (currentTime.Day - returnDate.Day);
+             int resultDays = DateTime.Compare(DateTime.Now, returnDate);
+             int bill = 0;
+             if (isDamaged)
+                 bill += 200;
+             if (resultDays > 0)
+                  bill += 12 * resultDays;
             return bill;
         }
 
