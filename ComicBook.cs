@@ -34,14 +34,7 @@ namespace HW_6
         {
             return base.ToString() + "\tdate:" + returnDate;
         }
-        public int Fine()
-        {
-            int resultDays = DateTime.Compare(DateTime.Now, returnDate);
-            int bill = 0;
-            if (resultDays > 0)
-                bill += 10 * resultDays;
-            return bill;
-        }
+        
         //-----interface----
         public bool Borrow(int days) //for comic books ONLY!
         {

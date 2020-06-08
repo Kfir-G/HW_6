@@ -8,7 +8,7 @@ namespace HW_6
         static void Main(string[] args)
         {
             Book[] books = new Book[10];
-
+            books[0] = new ComicBook(); 
         }
 
         //------functions------
@@ -33,7 +33,7 @@ namespace HW_6
         {
             if(book is ComicBook)
             {
-                ComicBook comicBook = book as ComicBook;
+                ComicBook comicBook = book as ComicBook; //maybe casting
                 if (comicBook.Borrow(daysBorrow))
                     comicBook.ToString();
                 else

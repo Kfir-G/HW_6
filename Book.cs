@@ -44,5 +44,16 @@ namespace HW_6
         {
             return "The name of the book:" + name + "\t" + "number of pages:" + pages + "\t" + "the name of the author" + author;
         }
+        public int CompareTo(Object obj)
+        {
+            if (!(obj is Vegetable))
+                throw new Exception("this is not a vegtable");
+            Vegetable veg = (Vegetable)obj;
+            if (caloriesPerVegetable == veg.caloriesPerVegetable)
+                return 0;
+            if (caloriesPerVegetable < veg.caloriesPerVegetable)
+                return -1;
+            return 1;
+        }
     }
 }

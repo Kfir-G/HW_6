@@ -38,15 +38,21 @@ namespace HW_6
         }
         public new int Fine()
         {
-            return base.Fine();
+            TimeSpan resultDays = returnDate.Subtract(DateTime.Now);
+            int bill = 0;
+            if (isDamaged)
+                bill += 100;
+            if (resultDays.Days > 0)
+                bill += 10 * resultDays.Days;
+            return bill;
         }
 
         //------interface------
-        public new int Return()
+        public new int Return() //delete ?
         {
             return base.Return();
         }
-        public new bool Borrow(int days)
+        public new bool Borrow(int days) //delete?
         {
             return base.Borrow(days);
         }
