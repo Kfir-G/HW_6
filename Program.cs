@@ -17,8 +17,11 @@ namespace HW_6
             if(book is ComicBook)
             {
                 ComicBook comicBook = book as ComicBook;
-                if (comicBook.ReturnDate.CompareTo(DateTime.Now) > 0)//later 
-                    Console.WriteLine("The fine is: {0}", comicBook.Fine());
+                TimeSpan timeSpan = comicBook.ReturnDate.Subtract(DateTime.Now);
+                if (timeSpan.Days > 0)//later 
+                    Console.WriteLine("You are late! in {0} days", timeSpan.Days);
+                else
+                    Console.WriteLine("You have {0} days too return", timeSpan.Days);
                 return; //Exit
             }
             if (book is CookBook)
