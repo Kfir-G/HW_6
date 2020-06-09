@@ -41,23 +41,11 @@ namespace HW_6
             //
         public override string Summarize()
         {
-            return base.Summarize() + "\tThis action comic book is for ages greater than " + minAge + " years old";
+            return "This action comic book is for ages greater than " + minAge + " years old";
         }
         public override string ToString()
         {
             return base.ToString() + "\tthe minimal age is:" + minAge;
         }
-
-        //------interface------
-        /*
-        public new int Return()
-        {
-            return base.Return();
-        }
-        public new bool Borrow(int days)
-        {
-            return base.Borrow(days);
-        }
-        */
     }
 }

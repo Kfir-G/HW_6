@@ -9,7 +9,7 @@ namespace HW_6
         bool Borrow(int days);
         int Return();
     }
-    abstract class Book
+    abstract class Book: IComparable
     {
         //-----data fields-----
         protected string name;
@@ -23,7 +23,7 @@ namespace HW_6
 
         //-----methods----
             //constructors:
-        public Book()
+        public Book() 
         {
             Name = "No name yet";               //default
             Pages = 100;                         //default
@@ -44,18 +44,19 @@ namespace HW_6
         {
             return "The name of the book:" + name + "\t" + "number of pages:" + pages + "\t" + "the name of the author:" + author;
         }
-        /*
-        public int CompareTo(Object obj)
+
+        //-----interface---
+        public int CompareTo(object obj)
         {
-            if (!(obj is Vegetable))
+            if ( !(obj is Book) )
                 throw new Exception("this is not a vegtable");
-            Vegetable veg = (Vegetable)obj;
-            if (caloriesPerVegetable == veg.caloriesPerVegetable)
-                return 0;
-            if (caloriesPerVegetable < veg.caloriesPerVegetable)
+            int result = String.Compare( ((Book)obj).name, name);
+            if (result < 0) // name > book.Name
                 return -1;
-            return 1;
+            if (result > 0) //name < book.Name
+                return 1;
+            return 0;//name == book.Name
         }
-        */
+        
     }
 }

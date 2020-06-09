@@ -30,7 +30,7 @@ namespace HW_6
             //
         public override string Summarize()
         {
-            return "This kosher cooking book is supervised by" + supervision;
+            return "This kosher cooking book is supervised by:" + supervision;
         }
         public override string ToString()
         {
@@ -46,17 +46,5 @@ namespace HW_6
                 bill += 10 * resultDays.Days;
             return bill;
         }
-
-        //------interface------
-        /*
-        public new int Return() //delete ?
-        {
-            return base.Return();
-        }
-        public new bool Borrow(int days) //delete?
-        {
-            return base.Borrow(days);
-        }
-        */
     }
 }

@@ -7,6 +7,7 @@ namespace HW_6
         //-----Main----
         static void Main(string[] args)
         {
+            //a:
             Book[] books = new Book[10];
             books[0] = new ComicBook();
             books[1] = new ComicBook();
@@ -17,6 +18,7 @@ namespace HW_6
             books[6] = new CosherCookBook();
             books[7] = new CosherCookBook();
 
+            //d:
             DateTime dateTime1 = new DateTime(2020 , 01 , 1);
             books[0] = new ComicBook ("comicbook", 10, "ppp", dateTime1);
             DateTime dateTime2 = new DateTime(2021, 02, 2);
@@ -24,8 +26,20 @@ namespace HW_6
             DateTime dateTime3 = new DateTime(2019, 03, 3);
             books[4] = new CookBook("cookbook", 40, "yyy", dateTime3, true);
             DateTime dateTime4 = new DateTime(2019, 04, 4);
-            books[6] = new CosherCookBook("coshercookbook", 40, "yyy", dateTime4, true, "Pedo");
+            books[6] = new CosherCookBook("coshercookbook", 40, "yyy", dateTime4, true, "Pdo");
 
+            //e:
+            for (int i = 0; i < 10; i++)
+                PrintBook(books[i]);
+
+            Console.WriteLine("===================================================================================\n");
+
+            //f:
+            for (int i = 0; i < 10; i++)
+                PrintSummarize(books[i]);
+
+            //g:
+            Array.Sort(books);
             for (int i = 0; i < 10; i++)
                 PrintBook(books[i]);
         }
@@ -71,29 +85,59 @@ namespace HW_6
         }
         public static void PrintBook(Book book)
         {
+            Console.WriteLine("\n");
             if(book is Book)
             {
-                book.ToString();
+                Console.WriteLine("{0}" ,book.ToString());
                 return;//--Exit--
             }
             if(book is ComicBook)
             {
-                ((ComicBook)book).ToString();
+                Console.WriteLine("{0}", ((ComicBook)book).ToString());
                 return;//--Exit--
             }
             if (book is ActionComicBook)
             {
-                ((ActionComicBook)book).ToString();
+                Console.WriteLine("{0}", ((ActionComicBook)book).ToString());
                 return;//--Exit--
             }
             if (book is CookBook)
             {
-                ((CookBook)book).ToString();
+                Console.WriteLine("{0}", ((CookBook)book).ToString());
                 return;//--Exit--
             }
             if (book is CosherCookBook)
             {
-                ((CosherCookBook)book).ToString();
+                Console.WriteLine("{0}", ((CosherCookBook)book).ToString());
+                return;//--Exit--
+            }
+        }
+        public static void PrintSummarize(Book book)
+        {
+            Console.WriteLine("\n");
+            if (book is Book)
+            {
+                Console.WriteLine("{0}", book.Summarize());
+                return;//--Exit--
+            }
+            if (book is ComicBook)
+            {
+                Console.WriteLine("{0}", ((ComicBook)book).Summarize());
+                return;//--Exit--
+            }
+            if (book is ActionComicBook)
+            {
+                Console.WriteLine("{0}", ((ActionComicBook)book).Summarize());
+                return;//--Exit--
+            }
+            if (book is CookBook)
+            {
+                Console.WriteLine("{0}", ((CookBook)book).Summarize());
+                return;//--Exit--
+            }
+            if (book is CosherCookBook)
+            {
+                Console.WriteLine("{0}", ((CosherCookBook)book).Summarize());
                 return;//--Exit--
             }
         }
