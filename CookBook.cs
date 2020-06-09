@@ -37,7 +37,7 @@ namespace HW_6
         }
         public override string ToString()
         {
-            return base.ToString() + "\tdate:" + returnDate + "\t is it damaged:" + isDamaged;
+            return base.ToString() + "\treturn date:" + returnDate + "\t is it damaged:" + isDamaged;
         }
         public int Fine()
         {

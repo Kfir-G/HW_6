@@ -42,7 +42,7 @@ namespace HW_6
         public abstract string Summarize();
         public override string ToString()
         {
-            return "The name of the book:" + name + "\t" + "number of pages:" + pages + "\t" + "the name of the author" + author;
+            return "The name of the book:" + name + "\t" + "number of pages:" + pages + "\t" + "the name of the author:" + author;
         }
         /*
         public int CompareTo(Object obj)
