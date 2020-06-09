@@ -52,9 +52,9 @@ namespace HW_6
                 throw new Exception("this is not a vegtable");
             int result = String.Compare( ((Book)obj).name, name);
             if (result < 0) // name > book.Name
-                return -1;
-            if (result > 0) //name < book.Name
                 return 1;
+            if (result > 0) //name < book.Name
+                return -1;
             return 0;//name == book.Name
         }
         

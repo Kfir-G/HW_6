@@ -15,9 +15,9 @@ namespace HW_6
 
         //-----methods-----
         //constractors:
-        public LibraryBook():base()
+        public LibraryBook(): base()
         {
-
+            
         }
         public LibraryBook(string name, int pages, string author): base(name ,pages ,author)
         {

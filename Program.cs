@@ -9,14 +9,15 @@ namespace HW_6
         {
             //a:
             Book[] books = new Book[10];
-            books[0] = new ComicBook();
+            //books[0] = new ComicBook();
             books[1] = new ComicBook();
-            books[2] = new ActionComicBook();
+            //books[2] = new ActionComicBook();
             books[3] = new ActionComicBook();
-            books[4] = new CookBook();
+            //books[4] = new CookBook();
             books[5] = new CookBook();
-            books[6] = new CosherCookBook();
+            //books[6] = new CosherCookBook();
             books[7] = new CosherCookBook();
+            //books[8] = new LibraryBook();
 
             //d:
             DateTime dateTime1 = new DateTime(2020 , 01 , 1);
