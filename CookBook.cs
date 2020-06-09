@@ -53,9 +53,9 @@ namespace HW_6
         //------interface------
         public bool Borrow(int days) //for comic books ONLY!
         {
-            if ( returnDate.CompareTo(returnDate.Day + days) <= 0)
+            if ( returnDate.CompareTo(returnDate.Day + days) < 0)
             {
-                returnDate.AddDays(days);
+                //returnDate.AddDays(days);
                 return true;
             }
             else
@@ -63,8 +63,7 @@ namespace HW_6
         }
         public int Return()
         {
-            DateTime dateTime = DateTime.Now;
-            return ((returnDate.Subtract(dateTime)).Days);
+            return returnDate.Subtract(DateTime.Now).Days;
         }
     }
 }

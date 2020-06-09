@@ -44,6 +44,7 @@ namespace HW_6
         {
             return "The name of the book:" + name + "\t" + "number of pages:" + pages + "\t" + "the name of the author" + author;
         }
+        /*
         public int CompareTo(Object obj)
         {
             if (!(obj is Vegetable))
@@ -55,5 +56,6 @@ namespace HW_6
                 return -1;
             return 1;
         }
+        */
     }
 }

@@ -49,6 +49,7 @@ namespace HW_6
         }
 
         //------interface------
+        /*
         public new int Return()
         {
             return base.Return();
@@ -57,5 +58,6 @@ namespace HW_6
         {
             return base.Borrow(days);
         }
+        */
     }
 }
