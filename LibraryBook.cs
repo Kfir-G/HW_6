@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HW_6
 {
-    abstract class LibraryBook : Book
+    class LibraryBook : Book
     {
         //-----data fields----
         //protected string name
